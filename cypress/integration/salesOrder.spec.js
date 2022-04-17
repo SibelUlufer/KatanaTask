@@ -13,9 +13,6 @@ describe('Sales order page testing', ()=>{
     it('Should create order and check it', ()=>{
         salesOrder.checkOrderName()
     })
-    it('Should edit customer\'s address and check it', ()=>{
-        salesOrder.editAddressAndCheck()
-    })
     it('Should find the created sales order on Sales Orders list', ()=>{
         BasePage.clickTopMenu('Sell', 'sales')
         salesOrder.clearFilterOnSalesOrders()

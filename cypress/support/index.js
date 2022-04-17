@@ -3,7 +3,7 @@ import './commands'
 Cypress.on('uncaught:exception', (err, runnable) => {
     return false
     })
-    //enables to hide XHR on cypress test runner
+//enables to hide XHR on cypress test runner
  if (Cypress.config('hideXHR')) {
      const app = window.top;
    

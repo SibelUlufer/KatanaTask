@@ -27,7 +27,7 @@ class salesOrder{
         customer.createLastName('[data-testid="inputCustomerLastName"]',{force:true})
         this.makeDisplayNameSameWithNames()
         cy.clickButton('[placeholder="Enter address..."]')
-        customer.createAddress('[role="combobox"] > .MuiInputBase-root > .MuiInputBase-input','Germany')
+        customer.createAddress('[role="combobox"] > .MuiInputBase-root > .MuiInputBase-input','Germany ')
         cy.get('[role="combobox"][aria-expanded="true"]').type('{downArrow}{enter}')//selects first option from combobox
         cy.clickButton('#submitButton')//saves address
         cy.clickButton('.MuiGrid-justify-content-xs-center')
@@ -35,19 +35,6 @@ class salesOrder{
         cy.typeCommand('[placeholder="Search or create customer"]',Cypress.env('randomName'))
         cy.wait(2000)//waits to load the results
         cy.get('[placeholder="Search or create customer"]').type('{downArrow}{enter}')//selects first option from combobox
-    }
-    //enables to edit address and checks if edited
-    static editAddressAndCheck(){
-        cy.get('[data-testid="address-field-location"]').click()
-        customer.createAddress('[placeholder="Enter street name"]', 'Istanbul')
-        cy.get('[placeholder="Enter street name"]').type('{downArrow}{enter}')//selects first option from combobox
-        cy.get('[placeholder="Enter street name"]').then( line1 =>{
-            const adLine = line1.val()
-            Cypress.env('addressInfo', adLine)
-            cy.clickButton('#submitButton')
-            BasePage.isSaved()
-            cy.isContain('[data-testid="address-field-location"]',Cypress.env('addressInfo'))
-        })
     }
     //makes the display name same with name&last name and checks if correct
     static makeDisplayNameSameWithNames(){

@@ -18,10 +18,10 @@ class BasePage{
     }
     //manages saving action
     static isSaved(){
-        cy.get('.MuiGrid-grid-xs-true').then( ele =>{
+        cy.get('.MuiTypography-caption').then( ele =>{
             if(ele.text().includes('Customer')){
-                cy.get('.jss84').then( ele =>{
-                    if(ele.text().includes('Not saved')){
+                cy.get('.katana-label').then( ele =>{
+                    if(ele.hasClass('notSaved')){
                         cy.isVisible('.notSaved')
                         cy.isContain('.notSaved', 'Not saved')
                         cy.log('Not saved!')
@@ -32,8 +32,8 @@ class BasePage{
                     }
                 })
             }else{//for Sales Order
-                cy.get('.jss122').then( ele =>{
-                    if(ele.text().includes('Not saved')){
+                cy.get('.katana-label').then( ele =>{
+                    if(ele.hasClass('notSaved')){
                         cy.isVisible('.notSaved')
                         cy.isContain('.notSaved', 'Not saved')
                         cy.log('Not saved!')

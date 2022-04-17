@@ -9,12 +9,12 @@ $ npm i
 ```
 
 ## CYPRESS DASHBOARD 
-- Dashboard integration script is 
+- Dashboard integration with
 ```
 "npm run cy:run"
 ```
 ## GitHub 
-- Integration Cypress runs into GitHub actions
+- Integration Cypress runs into GitHub actions with
 ```
 "npm run cy:run-dashboard"
 ```
@@ -22,7 +22,7 @@ $ npm i
 **../integrations file has 3 spec files.**
 **../integrations/apiTest.spec.js includes api tests which consist of 6 cases**
 **../integrations/customer.spec.js includes customer related tests which consist of 7 cases.**
-**../integrations/salesOrder.spec.js includes sales order related tests which consist of 6 cases.**
+**../integrations/salesOrder.spec.js includes sales order related tests which consist of 5 cases.**
 
 **../support/pages has 3 .js files**
 **../support/pages/api.js includes fuctions for api testing.**
