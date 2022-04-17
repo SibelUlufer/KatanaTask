@@ -11,7 +11,8 @@
   "baseUrl": "https://katanamrp.com/",
   "env": {
     "email": "kd-basak@hotmail.com",
-    "password": "TestKatana1234"
+    "password": "TestKatana1234",
+    "api_key" : "f5e23fc6-b819-4ad0-8953-247e8980686b"
   },
   "projectId": "6kdh3q"
 }

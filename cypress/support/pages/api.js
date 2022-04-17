@@ -41,10 +41,9 @@ class api{
     }
     //enables to list all customers
     static listCustomers(){
-        let api_key = 'f5e23fc6-b819-4ad0-8953-247e8980686b'
         cy.request({
             url:'https://api.katanamrp.com/v1/customers',
-            headers:{'Authorization':'Bearer '+ api_key},
+            headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
             method: 'GET'  
             }).then(response=>{
                     expect(response.status).to.eq(200)
@@ -56,10 +55,9 @@ class api{
         this.setFirstName()
         this.setLastName()
         this.setPhoneNumber()
-        let api_key = 'f5e23fc6-b819-4ad0-8953-247e8980686b'
         cy.request({
             url:'https://api.katanamrp.com/v1/customers',
-            headers:{'Authorization':'Bearer '+ api_key},
+            headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
             body:{
                     "name": "sibel test",
                     "first_name": Cypress.env('firstName'),
@@ -85,7 +83,7 @@ class api{
                     const mail = response.body.email
                     const phone = response.body.phone
                     cy.request({
-                        headers:{'Authorization':'Bearer '+ api_key},
+                        headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
                         url: 'https://api.katanamrp.com/v1/customers' + '?' + customerName,
                         method: 'GET'
                     }).then(response =>{
@@ -105,10 +103,9 @@ class api{
         this.setFirstName()
         this.setLastName()
         this.setPhoneNumber()
-        let api_key = 'f5e23fc6-b819-4ad0-8953-247e8980686b'
         cy.request({
             url:'https://api.katanamrp.com/v1/customers',
-            headers:{'Authorization':'Bearer '+ api_key},
+            headers:{'Authorization':'Bearer '+Cypress.env('api_key')},
             body:{
                     "name": "",
                     "first_name": Cypress.env('firstName'),
@@ -128,10 +125,9 @@ class api{
     }
     //checks location in sales order
     static checkLocationInSalesOrder(){
-        let api_key = 'f5e23fc6-b819-4ad0-8953-247e8980686b'
         cy.request({
             url:'https://api.katanamrp.com/v1/sales_orders',
-            headers:{'Authorization':'Bearer '+ api_key},
+            headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
             body:{
                 "customer_id": 25760083,
                 "order_no": "SU-111",
@@ -161,10 +157,9 @@ class api{
         this.setFirstName()
         this.setLastName()
         this.setPhoneNumber()
-        let api_key = 'f5e23fc6-b819-4ad0-8953-247e8980686b'
         cy.request({
             url:'https://api.katanamrp.com/v1/customers',
-            headers:{'Authorization':'Bearer '+ api_key},
+            headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
             body:{
                     "name": "sibel test",
                     "first_name": Cypress.env('firstName'),
@@ -178,7 +173,7 @@ class api{
                     expect(response.status).to.eq(200)//customer created successfully
                     const cusID = response.body.id//customer id
                     cy.request({
-                        headers:{'Authorization':'Bearer '+ api_key},
+                        headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
                         url: 'https://api.katanamrp.com/v1/sales_orders',
                         body:{
                             "customer_id": cusID,
@@ -209,10 +204,9 @@ class api{
         this.setFirstName()
         this.setLastName()
         this.setPhoneNumber()
-        let api_key = 'f5e23fc6-b819-4ad0-8953-247e8980686b'
         cy.request({
             url:'https://api.katanamrp.com/v1/customers',
-            headers:{'Authorization':'Bearer '+ api_key},
+            headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
             body:{
                     "name": "sibel test",
                     "first_name": Cypress.env('firstName'),
@@ -226,7 +220,7 @@ class api{
                     expect(response.status).to.eq(200)//customer created successfully
                     const cusID = response.body.id//customer id
                     cy.request({
-                        headers:{'Authorization':'Bearer '+ api_key},
+                        headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
                         url: 'https://api.katanamrp.com/v1/sales_orders',
                         body:{
                             "customer_id": cusID,
@@ -250,7 +244,7 @@ class api{
                         expect(response.body).to.have.property('customer_id', customerID)//checks customer id in order
                         const orderID = response.body.id//order id
                         cy.request({
-                            headers:{'Authorization':'Bearer '+ api_key},
+                            headers:{'Authorization':'Bearer '+ Cypress.env('api_key')},
                             url: 'https://api.katanamrp.com/v1/sales_orders' +"/"+orderID,
                             body:{
                                 "customer_id": cusID,
