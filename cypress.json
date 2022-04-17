@@ -1,0 +1,17 @@
+{
+  "ignoreTestFiles": [
+    ".js*",
+    "*.md"
+  ],
+  "watchForFileChanges": false,
+  "chromeWebSecurity": false,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "hideXHR": true,
+  "baseUrl": "https://katanamrp.com/",
+  "env": {
+    "email": "kd-basak@hotmail.com",
+    "password": "TestKatana1234"
+  },
+  "projectId": "6kdh3q"
+}
