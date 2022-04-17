@@ -9,7 +9,10 @@ $ npm i
 ```
 
 ## CYPRESS DASHBOARD 
-- Dashoard integration script is "npm run cy:run"
+- Dashoard integration script is 
+```
+"npm run cy:run"
+```
 
 **../integrations file has 3 spec files.**
 **../integrations/apiTest.spec.js includes api tests which consist of 6 cases**
