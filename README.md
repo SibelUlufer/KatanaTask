@@ -9,9 +9,14 @@ $ npm i
 ```
 
 ## CYPRESS DASHBOARD 
-- Dashoard integration script is 
+- Dashboard integration script is 
 ```
 "npm run cy:run"
+```
+## GitHub 
+- Integration Cypress runs into GitHub actions
+```
+"npm run cy:run-dashboard"
 ```
 
 **../integrations file has 3 spec files.**
